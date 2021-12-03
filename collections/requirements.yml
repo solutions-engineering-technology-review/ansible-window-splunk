@@ -1,0 +1,9 @@
+---
+collections:
+  - name: sample.sample_collection
+    version: '0.0.5'
+    source: 'https://hub-galaxy-ansible-automation-platform.itzroks-666000ldq2-j0xnds-4b4a324f027aea19c5cbc0c3275c4656-0000.hkg02.containers.appdomain.cloud/api/galaxy/content/published/'
+  - name: bay.automation
+    version: '1.0.1'
+    source: 'https://hub-galaxy-ansible-automation-platform.itzroks-666000ldq2-j0xnds-4b4a324f027aea19c5cbc0c3275c4656-0000.hkg02.containers.appdomain.cloud/api/galaxy/content/published/'
+  - name: community.vmware

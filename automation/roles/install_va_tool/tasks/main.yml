@@ -1,0 +1,37 @@
+- name: Copy Splunk License
+  win_copy:
+   src: "{{ splunk_license_location }}"
+   dest: "{{ application_installer_target_dest }}/splunkclouduf.spl"
+   force: Yes
+
+- name: Uninstall splunk-universalforwarder
+  win_chocolatey:
+    name: splunk-universalforwarder
+    state: absent
+    allow_multiple: false
+
+- name: Install splunk-universalforwarder
+  win_chocolatey:
+    name: splunk-universalforwarder
+    version: '8.2.3'
+    state: present
+    install_args: "DEPLOYMENT_SERVER={{splunk_server}} SPLUNKUSERNAME={{splunk_username}} SPLUNKPASSWORD={{splunk_password}} WINEVENTLOG_APP_ENABLE=1 WINEVENTLOG_SEC_ENABLE=1 WINEVENTLOG_SYS_ENABLE=1 WINEVENTLOG_FWD_ENABLE=1 WINEVENTLOG_SET_ENABLE=1"
+    force: No
+    allow_multiple: false
+
+- name: Ensure that C:\Program Files\SplunkUniversalForwarder\bin is not on the current user's CLASSPATH
+  win_path:
+    name: PATH
+    elements: C:\Program Files\SplunkUniversalForwarder\bin
+    scope: machine
+    state: present
+
+- name: Login Splunk License
+  win_shell: splunk login -auth "{{splunk_username}}:{{splunk_password}}"
+  register: result
+- name: Install Splunk License
+  win_shell: splunk install app .\splunkclouduf.spl 
+  register: result
+- name: Restart Splunk Service
+  win_shell: splunk restart
+  register: result

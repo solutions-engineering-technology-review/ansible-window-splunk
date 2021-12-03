@@ -1,0 +1,8 @@
+---
+# defaults file for install-va-tool
+splunk_license_location: install-file/splunkclouduf.spl
+splunk_server: "yyyyyyy.splunkcloud.com:8089"
+splunk_username: admin
+splunk_password: xxxxxx
+application_installer_target_dest: "C:/Users/Administrator"
+#application_installer_target_dest: "C:/Users/Administrator.WINDOW-ENHANCE0"

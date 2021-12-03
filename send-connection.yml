@@ -1,0 +1,12 @@
+- name: Initialize Connection Host
+  hosts: all
+  # 
+  vars_files:
+    - automation/roles/install_va_tool/defaults/main.yml
+
+  tasks:
+  # delete this task if you don't want to copied Installer to Remote Window Server
+  # if you want to use make sure you provide location of Installer File
+  - name: Sent Ping and Gather Message
+    include: automation/roles/install_va_tool/tasks/debug-connection.yml
+  

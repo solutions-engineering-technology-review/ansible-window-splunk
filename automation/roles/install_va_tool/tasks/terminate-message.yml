@@ -1,0 +1,6 @@
+---
+# tasks file for install-va-tool
+
+- name: Ending Connection
+  debug:
+    msg: "Ending Connection"

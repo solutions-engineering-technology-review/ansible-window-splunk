@@ -1,0 +1,14 @@
+- name: Install Splunk Agent
+  hosts: all
+
+  vars_files:
+    - automation/roles/install_va_tool/defaults/main.yml
+
+  tasks:
+  # - name: debug Window Server Connection
+  #   include: automation/roles/install-va-tool/tasks/debug-connection.yml
+  # delete this task if you don't want to copied Installer to Remote Window Server
+  # if you want to use make sure you provide location of Installer File
+  - name: Install Splunk Agent
+    include: automation/roles/install_va_tool/tasks/main.yml
+  

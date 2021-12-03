@@ -1,0 +1,20 @@
+---
+- name: Get whoami information
+  register: result
+  win_whoami: {}
+
+- name: print Result
+  debug:
+    msg: "{{ result }}"
+
+- name: print Survey Variable
+  debug:
+    msg: "{{ email_address }} | {{splunk_password}} | {{is_generate_ssl}}"
+
+- name: Powershell Current Directory
+  win_shell: pwd
+  register: result
+
+- name: print message
+  debug:
+    msg: "{{ result.stdout_lines  }}"
