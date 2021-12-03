@@ -1,6 +1,6 @@
 # Ansible Window Splunk Universal Forwarder Integration
 ![](assets/cover.png)
-ภาพรวมของ Architecture ที่ใช้งานในปลายทางของวีดีโอ
+ภาพรวมของ Architecture ที่ใช้งาน
 ### 1. เงื่อนไขพื้นฐานในการใช้ Ansible กับ Window Server
 ในการ Setup Ansible ให้สามารถทำงานกับ Window นั้นมีความจำเป็นมากกว่า Linux เพิ่มเติมนิดหน่อยคือปกติแล้ว Window Server นั้นไม่ได้ใช้งาน SSH Services แต่ใช้เป็นการ Remote ผ่าน WinRM Protocol แทนซึ่ง WinRM นั้นจำเป็นที่จะต้องทำงานผ่าน Port 5985 หรือ 5986
 [อ้างอิง WinRM Port](https://docs.microsoft.com/en-us/windows/win32/winrm/installation-and-configuration-for-windows-remote-management#windows-firewall-and-winrm-20-ports)
