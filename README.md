@@ -1,4 +1,6 @@
-# Ansible Window Splunk Universal Forwarder Integration
+# Solution series: Automate your IT operations with *Red Hat Ansible Automation Platform*
+
+## Automate to integrate Splunk Universal Forwarder for Windows Server 2019
 ![](assets/cover.png)
 ภาพรวมของ Architecture ที่ใช้งาน
 
